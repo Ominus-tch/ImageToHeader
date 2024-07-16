@@ -1,3 +1,7 @@
+ALPHA_ONLY = True # Stores only the alpha values of the images
+RESIZE_IMAGES = True # Resizes the images
+RESIZE_SIZE = (64, 64)
+
 import os, re, time, cProfile, pstats
 from PIL import Image, ImageOps
 import io
@@ -237,9 +241,8 @@ def main():
         print("No assets found!")
         return
 
-    assets_dir = resize_images(assets_dir, (64, 64))
-
-    ALPHA_ONLY: bool = True
+    if RESIZE_IMAGES:
+        assets_dir = resize_images(assets_dir, RESIZE_SIZE)
 
     original_size = 0
     for file_name in os.listdir(assets_dir):

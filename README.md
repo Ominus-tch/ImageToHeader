@@ -39,11 +39,13 @@ This program compresses and converts images and icons to binary inside an [image
 4. **RLE Compression**
    - Apply RLE compression to reduce file size further.
 
+5. Make sure compression worked by checking that the images in the /decompressed directory look good
+
 ## Installation
 
 1. Clone the repository.
 2. Create an assets directory if not already existing and place any .png images there
-3. Edit config to fit your needs
+3. Edit config at the top of `main.py` to fit your needs
 4. Run!
 5. Use generated header file directly in your projects
 
